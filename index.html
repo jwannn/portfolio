@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jwan Khoja — IT-Support Specialist</title>
+<meta name="description" content="Jwan Khoja — IT-Support Specialist (1st &amp; 2nd Level) in Deutschland. Erfahrung in Helpdesk, Ticketing und IT-Grundlagen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #F1F3EE;
+    --bg-card:   #E8EBE3;
+    --ink:       #1C2321;
+    --ink-soft:  #57615B;
+    --line:      #D2D8CC;
+    --accent:    #2F6F62;
+    --accent-soft: rgba(47,111,98,0.12);
+    --open:      #B5651D;
+    --max: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;}
+  a:hover, a:focus-visible{border-bottom-color:currentColor;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  .mono{font-family:'IBM Plex Mono', ui-monospace, monospace;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:560;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--ink);
+  }
+
+  /* ---------- header / status bar ---------- */
+  .statusbar{
+    border-bottom:1px solid var(--line);
+  }
+  .statusbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.03em; color:var(--ink-soft);}
+  .brand:first-child{color:var(--ink-soft); font-size:13px;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 40px;}
+  .hero h1{font-size:clamp(34px, 6vw, 50px); line-height:1.08;}
+  .hero .role{
+    margin-top:10px;
+    font-size:clamp(15px, 2.4vw, 17px);
+    color:var(--ink-soft);
+  }
+  .hero .role strong{color:var(--ink); font-weight:600;}
+  .hero p.intro{
+    margin-top:22px;
+    max-width:58ch;
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+
+  .contact-row{
+    margin-top:28px;
+    display:flex; flex-wrap:wrap; gap:8px 10px;
+  }
+  .contact-row a, .contact-row span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink);
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:6px 12px;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .contact-row a{border-bottom:none; color:var(--ink);}
+  .contact-row a:hover, .contact-row a:focus-visible{border-color:var(--accent); color:var(--accent);}
+
+  /* ---------- sections ---------- */
+  section{padding:44px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom:26px;
+  }
+  .section-head h2{font-size:22px;}
+  .section-head .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; color:var(--ink-soft);
+  }
+
+  /* ---------- profile ---------- */
+  #profil p{max-width:62ch; color:var(--ink-soft); font-size:15.5px;}
+
+  /* ---------- tickets (experience) ---------- */
+  .ticket{
+    border:1px solid var(--line);
+    background:var(--bg-card);
+    border-radius:6px;
+    padding:20px 22px;
+    margin-bottom:16px;
+  }
+  .ticket-top{
+    display:flex; flex-wrap:wrap; align-items:center;
+    gap:10px 14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-bottom:12px;
+  }
+  .ticket-id{color:var(--ink); letter-spacing:0.02em;}
+  .status{
+    padding:2px 9px; border-radius:20px;
+    letter-spacing:0.04em; text-transform:uppercase; font-size:10.5px;
+    border:1px solid currentColor;
+  }
+  .status.closed{color:var(--accent);}
+  .status.open{color:var(--open);}
+  .ticket-period{margin-left:auto;}
+
+  .ticket h3{font-size:18px; font-weight:560;}
+  .ticket .org{
+    font-size:14px; color:var(--ink-soft); margin-top:2px;
+  }
+  .ticket ul{
+    margin:14px 0 0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;
+  }
+  .ticket li{margin-bottom:5px;}
+  .ticket li::marker{color:var(--accent);}
+
+  /* ---------- projects ---------- */
+  .proj-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+  }
+  .project{
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:18px 20px;
+  }
+  .project h3{font-size:15.5px; font-weight:560; margin-bottom:8px;}
+  .project p{font-size:13.5px; color:var(--ink-soft); margin:0 0 12px;}
+  .project .chips{gap:6px;}
+  .project .chip{font-size:11.5px; padding:3px 8px;}
+  .project .insight{
+    margin:12px 0 0; padding-top:10px;
+    border-top:1px dashed var(--line);
+    font-size:12.5px; font-style:italic; color:var(--accent);
+  }
+
+  @media (max-width:640px){
+    .proj-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- education ---------- */
+  .edu-item{
+    display:grid; grid-template-columns:130px 1fr; gap:18px;
+    padding:16px 0; border-top:1px solid var(--line);
+  }
+  .edu-item:first-child{border-top:none;}
+  .edu-period{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft); padding-top:2px;}
+  .edu-item h3{font-size:16px; font-weight:560;}
+  .edu-item .org{font-size:14px; color:var(--ink-soft); margin-top:2px;}
+  .edu-item .detail{font-size:14px; color:var(--ink-soft); margin-top:6px;}
+
+  /* ---------- skills ---------- */
+  .skill-group{margin-bottom:20px;}
+  .skill-group h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; font-weight:500; letter-spacing:0.04em;
+    text-transform:uppercase; color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    border:1px solid var(--line); border-radius:5px;
+    padding:5px 10px; color:var(--ink);
+    background:var(--bg);
+  }
+
+  /* ---------- languages ---------- */
+  .lang-list{display:grid; gap:10px;}
+  .lang-row{
+    display:grid; grid-template-columns:140px 1fr auto;
+    align-items:center; gap:14px;
+  }
+  .lang-name{font-size:14.5px;}
+  .lang-track{
+    height:6px; background:var(--bg-card); border:1px solid var(--line);
+    border-radius:4px; overflow:hidden;
+  }
+  .lang-fill{height:100%; background:var(--accent);}
+  .lang-level{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-soft);
+    text-align:right; white-space:nowrap;
+  }
+
+  /* ---------- traits ---------- */
+  .traits{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+
+  /* ---------- footer ---------- */
+  footer{padding:36px 0 60px;}
+  footer .wrap{
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft);
+  }
+  footer a{color:var(--ink-soft);}
+  footer a:hover, footer a:focus-visible{color:var(--accent);}
+
+  @media (max-width:560px){
+    .edu-item{grid-template-columns:1fr;}
+    .edu-period{padding-top:0;}
+    .lang-row{grid-template-columns:100px 1fr auto;}
+    .ticket-period{margin-left:0;}
+    .statusbar .brand:last-child{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="statusbar">
+  <div class="wrap">
+    <span class="brand">JWAN KHOJA</span>
+    <span class="brand">IT-SUPPORT &amp; NETZWERKGRUNDLAGEN</span>
+  </div>
+</div>
+
+<header class="hero wrap">
+  <p class="eyebrow">IT-Support Specialist · 1st &amp; 2nd Level</p>
+  <h1>Jwan Khoja</h1>
+  <p class="role">Aus der Neugier für Netzwerke und IT-Sicherheit wurde der verlässliche Alltag im First- &amp; Second-Level-Support.</p>
+  <p class="intro">Ich bringe Nutzer:innen und funktionierende Technik wieder zusammen: von Passwort- und Druckerproblemen bis zu Netzwerkgrundlagen. Praxiserfahrung in IT-Grundlagen und Netzwerksicherheit (CompTIA, Google Cybersecurity) ergänzt den Support-Alltag um ein solides technisches Fundament.</p>
+
+  <div class="contact-row">
+    <a href="mailto:jwansam@outlook.de">✉ jwansam@outlook.de</a>
+    <span>📍 Deutschland</span>
+    <a href="https://jwannn.github.io/portfolio" target="_blank" rel="noopener">↗ jwannn.github.io/portfolio</a>
+    <span>🚗 Führerschein Klasse B</span>
+  </div>
+</header>
+
+<section id="profil">
+  <div class="wrap">
+    <div class="section-head"><span class="num mono">01</span><h2>Profil</h2></div>
+    <p>IT-Support Specialist mit praktischer Erfahrung im 1st- &amp; 2nd-Level-Support: Ticketbearbeitung per Telefon und Portal, Fehlerbehebung bei Hard- und Software sowie saubere Dokumentation in ServiceNow. Kommunikationsstark, ruhig unter Druck und geübt im direkten Kontakt mit Anwender:innen — Eigenschaften, die ich im Verkauf und als Promoter aufgebaut habe, bevor ich den Weg in die IT eingeschlagen habe.</p>
+    <p style="margin-top:14px;">Mein technisches Fundament stammt aus der Weiterbildung bei New Horizons: In Praxis-Labs zu CompTIA A+, Network+, Security+, CySA+ und PenTest+ sowie den Google-Cybersecurity-Kursen habe ich mich mit Netzwerkaufbau, Schwachstellenanalyse und Incident-Response-Szenarien auseinandergesetzt (siehe Projekte). Dieses Verständnis dafür, wie Systeme und Netzwerke im Hintergrund zusammenspielen, hilft mir heute dabei, Supportanfragen nicht nur zu lösen, sondern auch nachzuvollziehen, woher sie kommen — und langfristig möchte ich dieses Interesse an IT-Sicherheit weiter vertiefen.</p>
+  </div>
+</section>
+
+<section id="werdegang">
+  <div class="wrap">
+    <div class="section-head"><span class="num mono">02</span><h2>Werdegang</h2></div>
+
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="ticket-id">IT-Support</span>
+        <span class="status open">aktuell</span>
+        <span class="ticket-period">Apr 2025 – heute</span>
+      </div>
+      <h3>IT-Support Specialist (1st &amp; 2nd Level)</h3>
+      <div class="org">Allgeier Public GmbH · Düsseldorf</div>
+      <ul>
+        <li>Bearbeitet täglich ca. 30–55 Tickets per Telefon und Portal für Anwender:innen der Bundesagentur für Arbeit.</li>
+        <li>Löst Drucker-, Passwort- und Softwareprobleme (Word, Outlook, Fachsoftware) remote und vor Ort, dokumentiert alles in ServiceNow.</li>
+      </ul>
+    </article>
+
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="ticket-id">Weiterbildung</span>
+        <span class="status closed">abgeschlossen</span>
+        <span class="ticket-period">Dez 2023 – Jun 2024</span>
+      </div>
+      <h3>IT-Support / Helpdesk (Weiterbildung)</h3>
+      <div class="org">New Horizons</div>
+      <ul>
+        <li>Praxis-Labs zu CompTIA A+, Network+, Security+, CySA+, PenTest+ und Google-Cybersecurity-Kursen.</li>
+        <li>Strukturierte Erfassung und Lösung von Support-Tickets trainiert.</li>
+        <li>Netzwerke in Laborumgebungen aufgebaut, Schwachstellen mit Nmap und Burp Suite identifiziert, Incident-Szenarien im Team geübt.</li>
+      </ul>
+    </article>
+
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="ticket-id">Studium</span>
+        <span class="status closed">abgeschlossen</span>
+        <span class="ticket-period">Okt 2021 – Sep 2023</span>
+      </div>
+      <h3>Student der Betriebswirtschaft</h3>
+      <div class="org">FH Aachen</div>
+      <ul>
+        <li>Vollzeitstudium der Betriebswirtschaft über 4 Semester.</li>
+        <li>Parallel als Medical Tester im Medizinischen Testzentrum Köln zur Studienfinanzierung tätig.</li>
+      </ul>
+    </article>
+
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="ticket-id">Einzelhandel</span>
+        <span class="status closed">abgeschlossen</span>
+        <span class="ticket-period">Sep 2020 – Mai 2022</span>
+      </div>
+      <h3>Verkäufer</h3>
+      <div class="org">Foot Locker · Köln</div>
+      <ul>
+        <li>Team im Verkauf, bei Warenaufbau und gelegentlich an der Kasse unterstützt.</li>
+        <li>Kommunikationsfähigkeit, Stressresistenz und Serviceorientierung im direkten Kundenkontakt gestärkt.</li>
+      </ul>
+    </article>
+
+    <article class="ticket">
+      <div class="ticket-top">
+        <span class="ticket-id">Marketing</span>
+        <span class="status closed">abgeschlossen</span>
+        <span class="ticket-period">Jan 2020 – Dez 2020</span>
+      </div>
+      <h3>Promoter</h3>
+      <div class="org">Die Marketing Academy GmbH · Köln</div>
+      <ul>
+        <li>Passant:innen aktiv angesprochen, um sie von Produkten und Aktionen zu überzeugen.</li>
+        <li>Fundiertes Produktwissen für freie, kundenorientierte Gespräche genutzt.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="projekte">
+  <div class="wrap">
+    <div class="section-head"><span class="num mono">03</span><h2>Projekte</h2></div>
+    <p style="margin:-10px 0 24px; max-width:62ch; color:var(--ink-soft); font-size:14.5px;">Praxis-Labs aus der Weiterbildung bei New Horizons — eigenständig aufgebaute Umgebungen, in denen ich Netzwerk-, System- und Sicherheitsgrundlagen praktisch durchgespielt habe.</p>
+
+    <div class="proj-grid">
+      <article class="project">
+        <h3>Schwachstellen-Identifikation &amp; Behebung</h3>
+        <p>Mit Nmap offene Ports und Dienste auf einem bewusst verwundbaren Zielsystem (Metasploitable) aufgespürt, anschließend mit Nessus und OpenVAS gescannt und die Funde nach CVSS-Score priorisiert. Die kritischsten Schwachstellen habe ich per Patch, Service-Härtung und Neukonfiguration behoben und den Erfolg mit einem erneuten Scan überprüft.</p>
+        <div class="chips"><span class="chip">Nmap</span><span class="chip">Nessus</span><span class="chip">OpenVAS</span></div>
+        <p class="insight">Erkenntnis: Eine Schwachstelle gilt erst als behoben, wenn ein zweiter Scan es bestätigt.</p>
+      </article>
+
+      <article class="project">
+        <h3>Netzwerküberwachung mit IDS &amp; Zeek</h3>
+        <p>Eine Intrusion-Detection-Umgebung mit Snort und Suricata aufgesetzt und mit Zeek den gesamten Netzwerkverkehr protokolliert. Über tcpdump und Wireshark PCAP-Dateien erzeugt und anschließend mit Zeek ausgewertet, um Verbindungen, Protokolle und auffällige Muster gegen bekannte Angriffssignaturen abzugleichen.</p>
+        <div class="chips"><span class="chip">Snort</span><span class="chip">Suricata</span><span class="chip">Zeek</span><span class="chip">Wireshark</span></div>
+        <p class="insight">Erkenntnis: Wer den normalen Datenverkehr nicht kennt, erkennt auch die Abweichung nicht.</p>
+      </article>
+
+      <article class="project">
+        <h3>Malware-Analyse-Lab</h3>
+        <p>In isolierten, snapshot-basierten VMs (REMnux &amp; FlareVM) das Verhalten von Schadsoftware untersucht — zunächst statisch mit PEStudio und Binwalk, ohne den Code auszuführen, dann dynamisch mit Process Monitor und Wireshark, um Datei-, Registry- und Netzwerkänderungen inklusive möglicher C2-Kommunikation live zu beobachten.</p>
+        <div class="chips"><span class="chip">REMnux</span><span class="chip">FlareVM</span><span class="chip">Wireshark</span></div>
+        <p class="insight">Erkenntnis: Isolierte Umgebungen mit Snapshots machen riskante Analysen gefahrlos wiederholbar.</p>
+      </article>
+
+      <article class="project">
+        <h3>Honeypot zur Angreiferanalyse</h3>
+        <p>Mit Kippo, Cowrie und Dionaea absichtlich verwundbare Dienste als Köder bereitgestellt, um reale Angriffsversuche anzulocken. Den eingehenden Verkehr in Echtzeit mit dem ELK-Stack visualisiert und protokolliert, welche Befehle, Exploits und Zugriffsmuster Angreifer tatsächlich verwenden.</p>
+        <div class="chips"><span class="chip">Cowrie</span><span class="chip">Dionaea</span><span class="chip">ELK-Stack</span></div>
+        <p class="insight">Erkenntnis: Schon automatisierte Angriffswerkzeuge erzeugen überraschend viel schädlichen Datenverkehr.</p>
+      </article>
+
+      <article class="project">
+        <h3>Automatisierte Incident Response</h3>
+        <p>Wazuh zur zentralen Protokollverwaltung eingerichtet und über die SOAR-Plattform Shuffle mit Reaktions-Workflows verknüpft — etwa der automatischen Sperrung einer IP-Adresse per iptables nach mehreren fehlgeschlagenen Login-Versuchen, inklusive Benachrichtigung des Sicherheitsteams.</p>
+        <div class="chips"><span class="chip">Wazuh</span><span class="chip">Shuffle</span></div>
+        <p class="insight">Erkenntnis: Automatisierung verkürzt die Zeit zwischen Erkennung und Reaktion spürbar.</p>
+      </article>
+
+      <article class="project">
+        <h3>Netzwerkinfrastruktur &amp; Systempflege</h3>
+        <p>Einen kompletten Onboarding-Prozess durchgespielt — vom Benutzerkonto über Softwareinstallation bis zu Zugriffsrechten — sowie Hardware-Diagnosen (RAM-, Festplattentests) und die Planung und Absicherung einer kleinen Netzwerkinfrastruktur mit IP-Adressierung, VLANs und Firewall-Regeln.</p>
+        <div class="chips"><span class="chip">Windows</span><span class="chip">Linux</span><span class="chip">Firewall</span></div>
+        <p class="insight">Erkenntnis: Saubere Dokumentation macht jeden Schritt später nachvollziehbar und wiederholbar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="ausbildung">
+  <div class="wrap">
+    <div class="section-head"><span class="num mono">04</span><h2>Ausbildung</h2></div>
+
+    <div class="edu-item">
+      <div class="edu-period mono">2016 – 2019</div>
+      <div>
+        <h3>Abitur</h3>
+        <div class="org">Münchenkolleg · München</div>
+        <div class="detail">Schwerpunkte: Mathematik, Deutsch, Englisch, Ethik, Chemie.</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-period mono">2015 – 2016</div>
+      <div>
+        <h3>Sprachkurs &amp; Hauptschule</h3>
+        <div class="org">Schlauschule · München</div>
+        <div class="detail">Intensive Verbesserung der Deutschkenntnisse als Vorbereitung auf das Abitur.</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-period mono">2003 – 2011</div>
+      <div>
+        <h3>Mittlere Reife</h3>
+        <div class="org">British International School of Aleppo · Syrien</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faehigkeiten">
+  <div class="wrap">
+    <div class="section-head"><span class="num mono">05</span><h2>Fähigkeiten</h2></div>
+
+    <div class="skill-group">
+      <h3>Support &amp; Tools</h3>
+      <div class="chips">
+        <span class="chip">ServiceNow</span>
+        <span class="chip">Ticketsysteme</span>
+        <span class="chip">MS Word</span>
+        <span class="chip">MS Excel</span>
+        <span class="chip">MS PowerPoint</span>
+        <span class="chip">Skype</span>
+        <span class="chip">Citrix</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>IT- &amp; Netzwerkgrundlagen</h3>
+      <div class="chips">
+        <span class="chip">Windows</span>
+        <span class="chip">Linux</span>
+        <span class="chip">Kali Linux</span>
+        <span class="chip">Nmap</span>
+        <span class="chip">Wireshark</span>
+        <span class="chip">Burp Suite</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Entwicklung</h3>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">Java</span>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Eigenschaften</h3>
+      <div class="chips traits">
+        <span class="chip">Kommunikativ</span>
+        <span class="chip">Selbständig</span>
+        <span class="chip">Teamfähig</span>
+        <span class="chip">Motiviert</span>
+        <span class="chip">Offen im Umgang mit Menschen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sprachen">
+  <div class="wrap">
+    <div class="section-head"><span class="num mono">06</span><h2>Sprachen</h2></div>
+
+    <div class="lang-list">
+      <div class="lang-row">
+        <span class="lang-name">Arabisch</span>
+        <span class="lang-track"><span class="lang-fill" style="width:100%"></span></span>
+        <span class="lang-level">Muttersprache</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Kurdisch</span>
+        <span class="lang-track"><span class="lang-fill" style="width:100%"></span></span>
+        <span class="lang-level">Muttersprache</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Deutsch</span>
+        <span class="lang-track"><span class="lang-fill" style="width:80%"></span></span>
+        <span class="lang-level">C1</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Englisch</span>
+        <span class="lang-track"><span class="lang-fill" style="width:80%"></span></span>
+        <span class="lang-level">C1</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Französisch</span>
+        <span class="lang-track"><span class="lang-fill" style="width:60%"></span></span>
+        <span class="lang-level">B1</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">Türkisch</span>
+        <span class="lang-track"><span class="lang-fill" style="width:35%"></span></span>
+        <span class="lang-level">Grundkenntnisse</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Jwan Khoja</span>
+    <span><a href="mailto:jwansam@outlook.de">jwansam@outlook.de</a> · Deutschland</span>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
